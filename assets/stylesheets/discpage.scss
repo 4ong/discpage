@@ -5,10 +5,10 @@
 /* Disable centered header */
 // Potential fix for issue #20: html.dpg[data-dpg-layout='3'].dpg-wide header.d-header .wrap {
 html.dpg header.d-header .wrap {
-  margin: unset;
-  max-width: none;
-  /* With max-width:none, the hamburger menu is now sticked to the right side 
-  of the window. Unfortunately, when opened, the hamburger menu goes outside of 
+  //margin: unset;
+  //max-width: none;
+  /* With max-width:none, the hamburger menu is now sticked to the right side
+  of the window. Unfortunately, when opened, the hamburger menu goes outside of
   the right side of the window. So we need to increase x-padding from 8px to 10px */
   padding: 0px 10px;
 }
@@ -37,7 +37,7 @@ html.dpg[data-dpg-layout='3'] {
   }
   &.dpg-wide #dpg-right {
     padding-left: 50%;
-  }  
+  }
 }
 
 /*******************************************************************************
@@ -78,7 +78,7 @@ html.dpg[data-dpg-layout='3'].dpg-wide #dpg-container {
 /* Fix for "iOs: no scrolling in iframe". See:
 https          ://stackoverflow.com/questions/43262156/cant-scroll-iframe-on-mobile-ios-safari */
 /*
-html.dpg #dpg-ios-wrapper {    
+html.dpg #dpg-ios-wrapper {
   flex                      : 1 0 0px;
   display                   : flex;
   overflow                  : auto; // For iOs iframe scrolling
@@ -93,13 +93,13 @@ DOESN'T        ::-webkit-scrollbar-track
 /*
 html.dpg #dpg-ios-wrapper > iframe {
   width    : 1px;
-  min-width: 100%;  
+  min-width: 100%;
 }
 */
 
 html.dpg #dpg-left {
   flex: 1 0 0px;
-  overflow: auto;    
+  overflow: auto;
 }
 
 // No need for this, but sounds cleaner
@@ -283,7 +283,7 @@ html.dpg.dpg-hide-tags .widget-link[title="Tags"] {
 	Balloon topic categories
 *******************************************************************************/
 
-/* When the admin has set an automatic balloon topic category, then the balloon 
+/* When the admin has set an automatic balloon topic category, then the balloon
 category is hidden and disabled everywhere */
 
 // MARCHE PAS BIEN !!!!!!!!!!!
@@ -334,8 +334,8 @@ html.dpg.dpg-topic.dpg-hide-balloon-cat
   margin-left: 0px !important;
 }
 
-/* Because categories and tag fields are now hidden, margin-top is wrong and 
-the composer preview overlaps (and disables) the top-right buttons. So we need 
+/* Because categories and tag fields are now hidden, margin-top is wrong and
+the composer preview overlaps (and disables) the top-right buttons. So we need
 to restore margin-top as-if there was no .with-tags class. */
 /* DOES NOT SEEM TO BE NECESSARY ANYMORE
 html.dpg.dpg-tag .d-editor-preview-wrapper {
@@ -344,14 +344,14 @@ html.dpg.dpg-tag .d-editor-preview-wrapper {
 */
 
 /* Specific case of the composer in a tag page with interactMode="COMMENT".
-The composer is for creating a new topic, but, in js, we have changed the 
+The composer is for creating a new topic, but, in js, we have changed the
 "+ Create Topic" button to "+ Add Comment"
 - hide the composer topic title, because the topic title is set in js
-- hide the composer header, including text "Create a new topic" (meaningless 
+- hide the composer header, including text "Create a new topic" (meaningless
 because we are creating a comment, not a topic) and the menu (with the "create
- a new personal message" item) 
-- hide the composer tag chooser field: the first user to post a comment (so, to 
-create the first topic) should not be able to add a tag. What could this be 
+ a new personal message" item)
+- hide the composer tag chooser field: the first user to post a comment (so, to
+create the first topic) should not be able to add a tag. What could this be
 for? */
 html.dpg.dpg-tag.dpg-comment .composer-fields .title-input,
 html.dpg.dpg-tag.dpg-comment .composer-fields .reply-details,
@@ -444,20 +444,20 @@ html.dpg.dpg-topic .topic-category {
   min-height: 10px;
 }
 
-/* Specific case of a topic page with interactMode="COMMENT": hide the topic 
+/* Specific case of a topic page with interactMode="COMMENT": hide the topic
 title  */
 html.dpg.dpg-topic.dpg-comment #topic-title {
   display: none;
 }
 
-/* Specific case of the composer in a topic page with interactMode="COMMENT": 
+/* Specific case of the composer in a topic page with interactMode="COMMENT":
 The composer is for creating a new post (answer).
 - hide the header, as it show the automatically set title */
 html.dpg.dpg-topic.dpg-comment .composer-fields .reply-details {
   display: none !important;
 }
 
-/* Specific case of a topic page with interactMode="COMMENT": move the 
+/* Specific case of a topic page with interactMode="COMMENT": move the
 topic-map from behind the first post to above the first post */
 html.dpg.dpg-topic.dpg-comment .topic-map {
   position: absolute;
@@ -469,7 +469,7 @@ html.dpg.dpg-topic.dpg-comment .topic-map {
 
 /* Specific case of a topic page with interactMode="COMMENT": prevent title
 edition by hidding the edit icon. Hidding the icon is meaningless in the default
-case, because the title is hidden anyway. But it is useful if a trigger 
+case, because the title is hidden anyway. But it is useful if a trigger
 Discourse itself has been set by the client */
 html.dpg.dpg-topic.dpg-comment .edit-topic {
   display: none;
